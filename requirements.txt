@@ -1,0 +1,8 @@
+Flask==1.1.1
+numpy > 1.19.5
+Jinja2==2.11.2
+Pillow==8.3.2
+urllib3==1.25.9
+gunicorn==19.9.0
+joblib==0.14.0
+tensorflow==2.9.0

@@ -2,7 +2,7 @@
 ##### Mode is taken on google drive due to large size .
 
 <hr>
-
+        
 ##  Model Specs : 
 * Trained on 17572 images 
 * can predict 38 Disease
@@ -56,7 +56,7 @@
 Soon Website will be Deployed 
 
 ## What will be in the website
-* Home Page Containing Picture Uploading option.
+* Home Page Containing Picture Uploading option and test by Link.
 * Fast Prediction
 * Cure Suggestions
 * Information about Disease 
