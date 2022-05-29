@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Pep-Doctor'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DAAC23EB77FE4195A5ECBF78291FA3BC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2913983CB8374FE1BFBB0195E7204D86 }}
