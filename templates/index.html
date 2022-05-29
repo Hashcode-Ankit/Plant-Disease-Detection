@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
         rel="stylesheet" type='text/css'>
-    <title>Image Classification WebApp</title>
+    <title>Pep Doctor</title>
     <meta name="keywords" content="cutom file input, styling, label, cross-browser, accessible, input type file" />
 
     <style>
@@ -24,52 +27,60 @@
 
         .bg-img {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('static/css/front.jpg');
             background-size: cover;
             background-position: center;
         }
 
         header {
-            background-color: rgb(5, 1, 1);
-            position: fixed;
-            width: 100%;
-            padding: 20px 40px;
+        background-color: rgb(5, 1, 1);
+        position: fixed;
+        width: 100%;
+        padding: 20px 40px;
 
-            transition: all 0.3s linear;
+        transition: all 0.3s linear;
         }
 
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         }
 
         nav .logo {
-            font-weight: 600;
-            font-size: 2rem;
-            color: white;
+        font-weight: 600;
+        font-size: 2rem;
+        color: white;
         }
 
         nav ul {
-            list-style: none;
-            display: flex;
+        list-style: none;
+        display: flex;
         }
 
         nav ul li {
-            font-weight: 600;
-            color: white;
-            margin: 0px 14px;
+        font-weight: 600;
+        color: white;
+        margin: 0px 14px;
         }
 
         /* Scroll Effect */
         .scrollEffect {
-            background-color: white;
+        background-color: white;
         }
 
         .scrollEffect nav {
-            color: #fff;
+        color: #fff;
         }
+        ::-webkit-file-upload-button {
+            background: white;
+            color: black;
+            border-radius: 30%;
+            cursor: pointer;
+
+        }
+
     </style>
 
 
@@ -77,25 +88,25 @@
 
 <body>
     <div class="bg-img">
-        <header class="header">
+                <header class="header">
 
-            <nav class="nav">
-                <div class="logo">Pep Doctor</div>
-
-                <ul>
-                    <li>Home</li>
-                    <li>Live Detection</li>
-                </ul>
-            </nav>
-
-        </header>
-        <div class="content">
-            <div class="index-main">
+                    <nav class="nav">
+                      <div class="logo">Pep Doctor</div>
+                  
+                      <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/live">Live Detection</a></li>
+                      </ul>
+                    </nav>
+                  
+                  </header>
+            <div class="content"> 
+                <div class="index-main"> 
                 <div style="width : 100%; padding-top : 20%;">
                     <div class="header-content">
                         <h1 style="text-align: center;color: white"><span class="header-content-text">
-                                Plants Doctor
-                            </span></h1>
+                            Plants Doctor 
+                        </span></h1>
                     </div>
                 </div>
 
@@ -103,8 +114,8 @@
 
                     <div class="upload-file">
                         <form class="file-form" action="/success" method="post" , enctype="multipart/form-data">
-                            <input class="file-form-input" type="file" , name="file" />
-                            <button class="btn btn-success btn-lg" style="width:auto">Upload</button>
+                            <input class="file-form-input" style=" width: auto;" type="file" , name="file" />
+                            <button class="btn btn-success btn-lg" style="width:auto">Predict</button>
                         </form>
                     </div>
 
@@ -114,9 +125,9 @@
 
                     <div class="upload-link">
                         <form class="link-form" action="/success" method="post" , enctype="multipart/form-data">
-                            <input class="link-form-input" type="text" ,maxlength="1000" , name="link"
-                                placeholder="Paste the image URL(not the site address)" />
-                            <button class="btn btn-success btn-lg" style="width:auto">Proceed</button>
+                            <input class="file-form-input" type="text" ,maxlength="1000" , name="link"
+                                placeholder="Paste the image URL" />
+                            <button class="btn btn-success btn-lg" style="width:auto">Predict</button>
                         </form>
                     </div>
                     <div class="header-content-sub">
@@ -127,24 +138,72 @@
 
                 <div class="footer">
                     <div class="header-content-sub">
-                        <p style="text-align: center;color: white" class="header-content-info">The model was trained on
-                            real time Dataset
-                            and can detect Upto 38 Disease with 94% assurity.
+                        <p style="text-align: center;color: white" class="header-content-info">The model was trained on real time Dataset
+                         and can detect Upto 38 Disease with 94% assurity.
                         </p>
                     </div>
-                    <!-- slider for happy customers -->
+                  <!-- slider for happy customers -->
                     <div class="header-content">
-                        <span class="header-content-text">
-                            Happy Users
-                        </span>
+                       <div class="header-content-text">
+                           Plants Accepted
+                       </div>
+                        <div class="owl-slider">
+                            <div id="carousel" class="owl-carousel">
+                                <div class="item">
+                                    <img src="https://images.unsplash.com/photo-1592826763154-b4971ef94531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="1000X1000">
+                                    <p>Potato Leaves</p>
+                                </div>
+                                <div class="item">
+                                    <img src="https://images.unsplash.com/photo-1629389204508-480beb78e10f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" alt="">
+                                    <p>Apple Leaves</p>
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.stockvault.net/data/2018/12/23/258150/preview16.jpg" alt="">
+                                    <p>Corn Leaves</p>
+                                </div>
+                                <div class="item">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7S-Dz5nyF-GDmjtGSZ4-SD_sUtnLnWj-FBw&usqp=CAU" alt="">
+                                    <p>Tomato Leaves</p>
+                                </div>
+                                  
+                            </div>
+                            </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    jQuery("#carousel").owlCarousel({
+  autoplay: true,
+  rewind: true, 
+  margin: 20,
+  responsiveClass: true,
+  autoHeight: false,
+  autoplayTimeout: 7000,
+  smartSpeed: 800,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+
+    600: {
+      items: 1
+    },
+
+    1024: {
+      items: 1
+    },
+
+    1360: {
+      items: 1
+    }
+  }
+});
+</script>
 </body>
-
 </html>

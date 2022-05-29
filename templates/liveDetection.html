@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for('static' , filename='css/normalize.css' )}}>
+    <link rel="stylesheet" href={{url_for('static' , filename='css/grid.css' )}}>
+    <link rel='stylesheet' href={{url_for('static' , filename='css/style.css' )}}>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
+        rel="stylesheet" type='text/css'>
+    <title>Pep Doctor</title>
+    <meta name="keywords" content="cutom file input, styling, label, cross-browser, accessible, input type file" />
+
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .bg-img {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('static/css/front.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+        background-color: rgb(5, 1, 1);
+        position: fixed;
+        width: 100%;
+        padding: 20px 40px;
+
+        transition: all 0.3s linear;
+        }
+
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        nav .logo {
+        font-weight: 600;
+        font-size: 2rem;
+        color: white;
+        }
+
+        nav ul {
+        list-style: none;
+        display: flex;
+        }
+
+        nav ul li {
+        font-weight: 600;
+        color: white;
+        margin: 0px 14px;
+        }
+
+        /* Scroll Effect */
+        .scrollEffect {
+        background-color: white;
+        }
+
+        .scrollEffect nav {
+        color: #fff;
+        }
+        .flexShow{
+            display: flex;
+            flex-direction: column;
+        }
+        .btn{
+            width: auto;
+            height: auto;
+            margin-left: 38%;
+            /* margin-right: auto; */
+            margin-bottom: 3%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="bg-img fullscreen" >
+                <header class="header">
+
+                    <nav class="nav">
+                      <div class="logo">Pep Doctor</div>
+                  
+                      <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/live">Live Detection</a></li>
+                      </ul>
+                    </nav>
+                  
+                  </header>
+            <div class="content"> 
+                <div class="index-main"> 
+                <div style="width : 100%; padding-top : 20%;">
+                    <div class="header-content">
+                        <h1 style="text-align: center;color: white"><span class="header-content-text">
+                            Live Detection 
+                        </span></h1>
+                    </div>
+                </div>
+                <form class="file-form" action="/live" method="post" , enctype="multipart/form-data">
+                       <div class="flexShow">
+                        <div class="newCOnt">
+                            <img src="{{ url_for('video_feed') }}"  name='link'>
+                        </div>
+                        <div class="btnPredict" >
+                        <button class="btn btn-success btn-lg" style="width:auto">Predict</button>
+                      </div>
+                      <div class="result" >
+                        <h2 class="result">Output : {{Output}}</h2>
+                      </div>
+                       </div>
+                </form>
+                       
+               </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -13,7 +13,7 @@ html {
 .index-main
 {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image:linear-gradient(rgba(0, 0, 0, 0.71),rgba(0, 0, 0, 0.7)),url('front.jpg');
     background-size: cover;
     background-position: center;
@@ -105,9 +105,11 @@ html {
 .uploadOR
 {
     display: flex;
-    justify-content: center;
     text-align: center;
+    margin-left: 25%;
     align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .uploadOR > span
@@ -364,4 +366,100 @@ html {
     }
 
 
+}
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .owl-nav button.owl-prev {
+    left: 0;
+  }
+  .owl-nav button.owl-next {
+    right: 0;
+  }
+  
+  .owl-dots {
+    text-align: center;
+    padding-top: 15px;
+  }
+  .owl-dots button.owl-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #ccc;
+    margin: 0 3px;
+  }
+  .owl-dots button.owl-dot.active {
+    background-color: #000;
+  }
+  .owl-dots button.owl-dot:focus {
+    outline: none;
+  }
+  .owl-nav button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.38) !important;
+  }
+  span {
+      font-size: 70px;    
+      position: relative;
+      top: -5px;
+  }
+  .owl-nav button:focus {
+      outline: none;
+  }
+  .item{
+    width:250px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  .item img{
+    border-radius: 125px;
+    height: 250px;
+  }
+  .item p{
+      text-align: center;
+      color: white;
+      font-size: 20px;
+
+  }
+  .owl-slider{
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .header-content{
+      display: flex;
+      flex-direction: column;
+  }
+  .header-content-text{
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      font-size: 25px;
+  }
+  .newCOnt{
+      margin-top: 10%;
+    width: 70%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}  
+  .newCOnt img{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 60%;
+}   
+.result{
+    color: white;
+    margin-left: 10%;
+    height: 100px;
 }
