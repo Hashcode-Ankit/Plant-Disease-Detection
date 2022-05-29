@@ -1,8 +1,23 @@
 # Plant Disease Detection 
-##### Mode is taken on google drive due to large size .
 
-<hr>
-        
+
+##  Running on Local Host :
+*  Clone the repository on local host
+*  Run command  ```pip install -r requirements.txt ```
+*  If get any error from above command use ```pip3 install -r requirements.txt ```
+* Run the application
+    *   Window users :  ```python app.py```
+    *   Linux users : ```python3 app.py```
+
+## Intro to Website :
+* Home Page :
+    * Page Contatins file Upload:
+        * Upload the picture of leaf and get the disease detected
+    * Page also contatin link option for online pictures
+  <img src="static/css/image1.jpg"> 
+*   Live Detection :
+    * Page detect the live images
+   <img src="static/css/image2.jpg">  
 ##  Model Specs : 
 * Trained on 17572 images 
 * can predict 38 Disease
